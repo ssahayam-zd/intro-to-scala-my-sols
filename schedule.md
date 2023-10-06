@@ -1,46 +1,48 @@
-11.30 ExceptionExercises
+## Teaching Schedule
+<details>
+<summary>Exception Exercises (11.30 - 12:15)</summary>
 
-13.15 Exceptions2EitherExercises
-14.30 TryExercises
-
-# Exception Exercises (11.30 - 12:15)
-
-- getName (me)
-- getAge (5 mins)
-- createPerson (2 mins)
+- [ ] getName (me)
+- [ ] getAge (5 mins)
+- [ ] createPerson (2 mins)
 
 > explain collect (2 mins)
 
-- createValidPeople (5 mins)
-  - option
-  - sentinel value
+- [ ] createValidPeople (5 mins)
+  - [ ] option
+  - [ ] sentinel value
 
-- collectErrors (5 mins)
- - option
- - custom exception
+- [ ] collectErrors (5 mins)
+ - [ ] option
+ - [ ] custom exception
+</details>
 
 > 12.15 Lunch - 1:15
 
+<details>
+<summary>Either Exercises (13.15 - 2:30)</summary>
 
-# Either Exercises (13.15 - 2:30)
- - getName (me)
- - getAge (5 mins)
- - createPerson (2 min)
- - createPerson2 (4 min)
- - makeNameUpperCase (3 mins)
- - createPersonAndShow (5 mins)
- - createValidPeople (3 mins)
- - collectErrors (3 min)
+ - [ ] getName (me)
+ - [ ] getAge (5 mins)
+ - [ ] createPerson (2 min)
+ - [ ] createPerson2 (4 min)
+ - [ ] makeNameUpperCase (3 mins)
+ - [ ] createPersonAndShow (5 mins)
+ - [ ] createValidPeople (3 mins)
+ - [ ] collectErrors (3 min)
+</details>
 
+<details>
+<summary>Try Exercises (2:30 - 3:00)</summary>
 
-# Try Exercises (2:30 - 3:00)
- - parseIntSafe
- - parseBooleanSafe
- - increment (2 mins)
+ - [ ] parseIntSafe
+ - [ ] parseBooleanSafe
+ - [ ] increment (2 mins)
 
- - tryToEither
- - tryToOption (2 mins)
+ - [ ] tryToEither
+ - [ ] tryToOption (2 mins)
 
- - create Employee (me)
- - mkEmployee (5 mins)
- - fileToEmployees (1 min)
+ - [ ] create Employee + remove import (me)
+ - [ ] mkEmployee (5 mins)
+ - [ ] fileToEmployees (1 min)
+</details>
