@@ -43,7 +43,11 @@ object ExceptionExercises {
     *
     * Hint: use the isEmpty method on String
     */
-  def getName(providedName: String) : String = ???
+  def getName(providedName: String) : String = {
+    if (providedName.isEmpty()) {
+      throw new EmptyNameException("provided name is empty")
+    } else providedName
+  }
 
   /**
     * Implement the function getAge, so that it either accepts the supplied age
@@ -64,9 +68,14 @@ object ExceptionExercises {
     */
   def getAge(providedAge: String) : Int =
       try {
-        ???
+        val age = providedAge.toInt
+        if (age >= 1 && age <= 120) {
+          age
+        } else {
+          throw new InvalidAgeRangeException(s"provided age should be between 1-120: $age")
+        }
       } catch {
-        case _: NumberFormatException => ???
+        case _: NumberFormatException => throw new InvalidAgeValueException(s"provided age is invalid: $providedAge")
       }
 
 
@@ -92,7 +101,9 @@ object ExceptionExercises {
     *
     * Hint: Use `getName` and `getAge` from above.
     */
-  def createPerson(name: String, age: String): Person = ???
+  def createPerson(name: String, age: String): Person = {
+    Person(getName(name), getAge(age))
+  }
 
   /**
     * Implement the function createValidPeople to create a List of Person instances
@@ -107,16 +118,42 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     */
   def createValidPeople: List[Person] = {
-    personStringPairs.map {
+    val maybeValidPeople: List[Option[Person]] = personStringPairs.map {
       case (name, age) =>
         try {
-          ???
+          Some(createPerson(name, age)) // Person
         } catch {
-          case _: EmptyNameException       => ???
-          //handle in any other exception here
+          case _: EmptyNameException       => None
+          case _: InvalidAgeValueException => None
+          case _: InvalidAgeRangeException => None
         }
     }
+
+    maybeValidPeople.collect {
+      case Some(person) => person
+    }
   }
+
+
+  // def createValidPeople: List[Person] = {
+  //   val dummyPerson = Person("", -1)
+  //   val maybeValidPeople: List[Person] = personStringPairs.map {
+  //     case (name, age) =>
+  //       try {
+  //         createPerson(name, age) // Person
+  //       } catch {
+  //         case _: EmptyNameException       => dummyPerson
+  //         case _: InvalidAgeValueException => dummyPerson
+  //         case _: InvalidAgeRangeException => dummyPerson
+  //       }
+  //   }
+
+  //   maybeValidPeople.collect {
+  //     case person if person != dummyPerson => person
+  //   }
+  // }
+
+
 
   /**
     * Implement the function collectErrors that collects all the Exceptions
@@ -134,8 +171,44 @@ object ExceptionExercises {
     * What issues do you run into (if any)?
     */
   def collectErrors: List[Exception] = {
-    personStringPairs.map {
-      case (name, age) => ???
+    val maybeErrors: List[Option[Exception]] = personStringPairs.map {
+      case (name, age) => 
+        try {
+          createPerson(name, age)  
+          None
+        } catch {
+          case e: EmptyNameException       => Some(e)
+          case e: InvalidAgeValueException => Some(e)
+          case e: InvalidAgeRangeException => Some(e)
+        }
+        
+    }
+
+    maybeErrors.collect {
+      case Some(error) => error
     }
   }
+
+  // class SkipException extends Exception("Skip this")
+
+  // @SuppressWarnings(Array("org.wartremover.warts.IsInstanceOf"))
+  // def collectErrors: List[Exception] = {
+  //   val dummyError = new SkipException
+  //   val maybeErrors: List[Exception] = personStringPairs.map {
+  //     case (name, age) => 
+  //       try {
+  //         createPerson(name, age)  
+  //         dummyError
+  //       } catch {
+  //         case e: EmptyNameException       => e
+  //         case e: InvalidAgeValueException => e
+  //         case e: InvalidAgeRangeException => e
+  //       }
+        
+  //   }
+
+  //   maybeErrors.collect {
+  //     case error if !error.isInstanceOf[SkipException] => error
+  //   }
+  // }
 }

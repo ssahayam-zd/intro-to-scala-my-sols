@@ -11,7 +11,8 @@ lazy val projectSettings = Seq(
 )
 
 lazy val dependencies = Seq(
-  "org.scalatest" %% "scalatest" % "3.2.12" % Test
+  "org.scalatest" %% "scalatest" % "3.2.12" % Test,
+  "net.ssanj"  %% "delight"   % "0.1.0" % Test
 )
 
 lazy val options = Seq(
