@@ -1,4 +1,9 @@
-# Exception Exercises
+11.30 ExceptionExercises
+
+13.15 Exceptions2EitherExercises
+14.30 TryExercises
+
+# Exception Exercises (11.30 - 12:15)
 
 - getName (me)
 - getAge (5 mins)
@@ -14,8 +19,10 @@
  - option
  - custom exception
 
+> 12.15 Lunch - 1:15
 
-# Either Exercises
+
+# Either Exercises (13.15 - 2:30)
  - getName (me)
  - getAge (5 mins)
  - createPerson (2 min)
@@ -26,7 +33,7 @@
  - collectErrors (3 min)
 
 
-# Try Exercises
+# Try Exercises (2:30 - 3:00)
  - parseIntSafe
  - parseBooleanSafe
  - increment (2 mins)
