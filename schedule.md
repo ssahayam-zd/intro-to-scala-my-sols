@@ -2,9 +2,9 @@
 <details>
 <summary>Exception Exercises (11.30 - 12:15)</summary>
 
-- [x] Presentation + setup (10 mins)
-- [x] getName (2 minute + 1)  
-- [x] getAge (5 mins + 1)
+- [ ] Presentation + setup (10 mins)
+- [ ] getName (2 minute + 1)  
+- [ ] getAge (5 mins + 1)
 - [ ] createPerson (2 mins + 1)
 
 > explain collect in REPL (7 mins)
@@ -22,6 +22,7 @@
 
 <details>
 <summary>Either Exercises (13.15 - 2:30)</summary>
+
  - [ ] Presentation + REPL (15 mins)
  - [ ] getName (2 mins + 1)
  - [ ] getAge (5 mins + 1)
