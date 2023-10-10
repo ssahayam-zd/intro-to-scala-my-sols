@@ -11,12 +11,12 @@ val opEvens = numbers.map(evenO)
 
 ```scala
 //Only evens
-opEvens.filter(_.isDefined)
+opEvens.filter(op => op.isDefined)
 ```
 
 ```scala
 //filter evens and multiply by 10
-opEvens.filter(_.isDefined).map(_.map(_ * 10))
+opEvens.filter(op => op.isDefined).map(op => op.map(n  => n * 10))
 ```
 
 

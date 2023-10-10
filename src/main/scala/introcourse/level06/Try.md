@@ -12,6 +12,44 @@ def evenT(n: Int): Try[Int] = if (n % 2 == 0) Success(n) else Failure (new Runti
 ```
 
 ```scala
+evenT(1)
+
+
+evenT(2)
+```
+
+Safety:
+
+```scala
+def parseIntSafe(str: String): Try[Int] = Try(str.toInt)
+```
+
+
+Constructors:
+
+```scala
+evenT(2) match {
+  case Success(v) => s"success: $v"
+  case Failure(e)  => s"failure: $e"
+}
+
+evenT(1) match {
+  case Success(v) => s"success: $v"
+  case Failure(e)  => s"failure: $e"
+}
+```
+
+Success-biased:
+
+```scala
+evenT(1).map(n => n + 1)
+
+evenT(2).map(n => n + 1)
+```
+
+For-comp
+
+```scala
 val t1 =
   for {
     one <- evenT(10)
