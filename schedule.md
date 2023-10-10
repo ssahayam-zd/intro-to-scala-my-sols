@@ -3,17 +3,17 @@
 <summary>Exception Exercises (11.30 - 12:15)</summary>
 
 - [ ] Presentation (5 mins)
-- [ ] getName (1 minute)
-- [ ] getAge (5 mins)
-- [ ] createPerson (2 mins)
+- [ ] getName (2 minute + 1)  
+- [ ] getAge (5 mins + 1)
+- [ ] createPerson (2 mins + 1)
 
 > explain collect (5 mins)
 
-- [ ] createValidPeople (5 mins)
+- [ ] createValidPeople (5 mins + 1)
   - [ ] option (2 mins)
   - [ ] sentinel value
 
-- [ ] collectErrors (5 mins)
+- [ ] collectErrors (5 mins +1)
  - [ ] option (2 mins)
  - [ ] custom exception
 </details>
